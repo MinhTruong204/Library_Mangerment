@@ -27,9 +27,8 @@ Dự án sử dụng **ReactJS** để xây dựng giao diện người dùng t�
 
 ### Backend (Server)
 * **Core:** Node.js, ExpressJS
-* **Database:** [Ví dụ: MongoDB (Mongoose) / MySQL (Sequelize) / PostgreSQL]
+* **Database:** PostgreSQL
 * **Authentication:** JWT (JSON Web Token), Bcrypt
-* **Image Upload:** [Ví dụ: Multer / Cloudinary]
 
 ### ⚙️ Các bước cài đặt chi tiết
 
