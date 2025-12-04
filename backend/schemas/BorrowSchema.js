@@ -10,8 +10,10 @@ const BorrowSchema = new Schema({
   status: { type: String, enum: ["Requested","Issued","Requested Return", "Returned"], default: "Requested" },
   approvedBy: { type: Schema.Types.ObjectId, ref: "User", default: null }
 
+},
+{
+  timestampes: true
 }
-
 )
 
 module.exports = {BorrowSchema};
