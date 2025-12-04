@@ -67,14 +67,21 @@
 .navbar-links {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
+    list-style: none;
+    width: 100%; 
 }
-
+.nav-item {
+  width: 100%;            /* mỗi li chiếm full width */
+  margin-bottom: 0.5rem;  /* khoảng cách giữa các li */
+}
 .nav-link {
     color: white;
     text-decoration: none;
     padding: 0.5rem;
     transition: color 0.3s ease;
+
 }
 
 .nav-link:hover {
@@ -87,7 +94,13 @@
     gap: 1rem;
     margin-left: 1rem;
 }
-
+.navbar-nav {
+    display: flex;
+    flex-direction: row;      /* nằm ngang */
+    margin-left: auto;        /* đẩy sang phải */
+    gap: 1rem;
+    list-style: none;
+}
 .login-btn,
 .signup-btn,
 .logout-btn {
@@ -105,13 +118,13 @@
 }
 
 .login-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #2980b9;
 }
 
 .signup-btn {
     color: white;
-    background-color: #3498db;
-    border: 1px solid #3498db;
+    background-color: transparent;
+    border: 1px solid white;
 }
 
 .signup-btn:hover {

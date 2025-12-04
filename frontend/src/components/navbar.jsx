@@ -27,7 +27,7 @@ export default function Navbar() {
         </button>
 
         <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}>
-          <ul className="navbar-nav me-auto">
+          <ul className="navbar-links">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Home
@@ -53,9 +53,6 @@ export default function Navbar() {
                 Contact
               </Link>
             </li>
-          </ul>
-
-          <ul className="navbar-nav">
             {token ? (
               <li className="nav-item dropdown">
                 <button
@@ -83,13 +80,11 @@ export default function Navbar() {
               </li>
             ) : (
               <>
-                <li className="nav-item">
-                  <Link className="btn btn-light me-2" to="/login">
-                    Login
+                <li className="nav-item" style={{color:"white"}}>
+                  <Link className="login-btn btn-light me-2" to="/login">
+                    Login/
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="btn btn-outline-light" to="/register">
+                  <Link className="signup-btn btn btn-outline-light" to="/register">
                     Signup
                   </Link>
                 </li>
