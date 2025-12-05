@@ -1,12 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
-import './App.css'
-
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import UserLayout from "./layout/userlayout";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<h1>Trang chủ - Thư viện</h1>} />
+      <Route path="/" element={<UserLayout />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
