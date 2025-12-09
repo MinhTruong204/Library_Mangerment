@@ -18,7 +18,7 @@ router.post("/borrow/request-issue/:bookid",userAuth,checkRole("user"),booksCont
 router.put("/return/:id",userAuth,checkRole("user"),booksController.returnBook)
 router.put("/returnrequest/:id",userAuth,checkRole("user"),booksController.requestReturnBook)
 
-
-
+//Cập nhật api mượn trả
+//API Mượn Sách Cho Phép Mượn Quá 4 Cuốn
 
 module.exports = router 
