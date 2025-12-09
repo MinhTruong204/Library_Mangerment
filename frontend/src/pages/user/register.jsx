@@ -1,8 +1,8 @@
 import React from "react";
 import {useForm} from "react-hook-form";
 import axios from "axios";
-import { Server_URL } from "../../untils/config";
-import { showErrorToast, showSuccessToast } from "../../untils/toasthelper";
+import { Server_URL } from "../../utils/config";
+import { showErrorToast, showSuccessToast } from "../../utils/toasthelper";
 
 
 export default function Register(){
