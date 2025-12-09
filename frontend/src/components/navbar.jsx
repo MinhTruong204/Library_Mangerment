@@ -1,0 +1,98 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./navbar.css";
+export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const token = localStorage.getItem("authToken");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  };
+
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+      <div className="container">
+        <Link className="navbar-brand fw-bold" to="/">
+          📚 AGC Library
+        </Link>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}>
+          <ul className="navbar-links">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/books">
+                Books
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/category">
+                Category
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/aboutus">
+                About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/contactus">
+                Contact
+              </Link>
+            </li>
+            {token ? (
+              <li className="nav-item dropdown">
+                <button
+                  className="btn btn-light dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  👤 Profile
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <Link className="dropdown-item" to="/user">
+                      My Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <button className="dropdown-item" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <>
+                <li className="nav-item" style={{color:"white"}}>
+                  <Link className="login-btn btn-light me-2" to="/login">
+                    Login/
+                  </Link>
+                  <Link className="signup-btn btn btn-outline-light" to="/register">
+                    Signup
+                  </Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
