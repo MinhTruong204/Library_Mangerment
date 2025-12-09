@@ -304,25 +304,6 @@ booksController.reqIssueBook = async (req, res) => {
 };
 
 
-// booksController.getIssuedBooks = async (req, res) => {
-//   try {
-//     const userId = req.userInfo.id; 
-//     console.log("Fetching issued books for user:", userId);
-
-//     const issuedBooks = await BorrowModel.find({ userId, returnDate: null }) 
-//       .populate("bookId", "title author category isbn price coverImage")
-//       .populate("userId", "name email role"); 
-
-//     if (!issuedBooks || issuedBooks.length === 0) {
-//       return res.status(404).json({ error: true, message: "No issued books found." });
-//     }
-
-//     res.json({ error: false, message: "Issued books fetched successfully", issuedBooks });
-//   } catch (error) {
-//     console.error("Error fetching issued books:", error);
-//     res.status(500).json({ error: true, message: "Internal server error" });
-//   }
-// };
 
 booksController.getIssuedBooks = async (req, res) => {
   try {
