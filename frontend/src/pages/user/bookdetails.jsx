@@ -17,36 +17,6 @@ function BookDetails() {
     const [error, setError] = useState(null);
     const [isIssuing, setIsIssuing] = useState(false);
 
-    // async function issueBook(bookid) {
-    //     try {
-    //         setIsIssuing(true);
-    //         const authToken = localStorage.getItem("authToken");
-    //         if (!authToken) {
-    //             alert("Please login to issue a book.");
-    //             return;
-    //         }
-    //         const url = Server_URL + 'books/issuebook/' + bookid;
-    //         const response = await axios.post(url, {}, {
-    //             headers: {
-    //                 Authorization: `Bearer ${authToken}`,
-    //             },
-    //         });
-    //         const { error, message } = response.data;
-    //         if (error) {
-    //             alert(message);
-    //         } else {
-    //             alert(message);
-    //             // Refresh book data after issuing
-    //             const updatedResponse = await axios.get(`${Server_URL}books/${id}`);
-    //             setBook(updatedResponse.data);
-    //         }
-    //     } catch (error) {
-    //         console.error("Error:", error.response?.data || error.message);
-    //         alert(error.response?.data?.message || "Something went wrong! Please try again.");
-    //     } finally {
-    //         setIsIssuing(false);
-    //     }
-    // }
     async function issueBook(bookid) {
         try {
           console.log("bookId");
