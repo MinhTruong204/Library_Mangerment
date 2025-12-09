@@ -34,7 +34,6 @@ const Books = () => {
               Authorization: `Bearer ${authToken}`,
             },
           });
-
           // alert(response.data);
           const {error,message} = response.data;
           if(error){
